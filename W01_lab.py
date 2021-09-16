@@ -29,7 +29,7 @@ if value_max <= 1 :
 value_random = random.randint(1, value_max)
 
 # Give the user instructions as to what he or she will be doing
-print('Guess a number between 1 and ',value_max,'.')
+print('Guess a number between 1 and',value_max,'.')
 
 # Initialize the sentinal and the array of guesses
 guesses = []
