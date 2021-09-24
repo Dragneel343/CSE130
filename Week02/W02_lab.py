@@ -13,11 +13,10 @@
 #    approx. 2.5 hrs
 
 import json
-from os import close
 
-#Read from the JSON file
 try:
-    with open('Week02/Lab02.json', "r") as file:
+    #Read from the JSON file
+    with open('Week02/Lab02.json') as file:
 
         #Reads the file into text.
         text = file.read()
@@ -25,9 +24,9 @@ try:
         #Converts text file into JSON.
         my_json = json.loads(text)
 
-        #Pulls the list of username and list of passwords.
-        usernames = my_json['username']
-        passwords = my_json['password']
+    #Pulls the list of username and list of passwords.
+    usernames = my_json['username']
+    passwords = my_json['password']
 
     #print(usernames)
     #print(passwords)
@@ -37,13 +36,11 @@ try:
     password = input("Password: ")
 
     #Authenticate username and password.
-    if username in usernames:
-        if password in passwords:
+    for i in range(len(usernames)):
+        if username == str(usernames[i]) and password == str(passwords[i]):
             print("You are authenticated!")
         else:
             print("You are not authorized to use the system.")
-            close
 
-#error handling incase the file isnt there.
 except FileNotFoundError:
     print("Unable to open file Lab02.json.")
