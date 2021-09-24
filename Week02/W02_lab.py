@@ -7,19 +7,43 @@
 #    The program will then prompt the user for a username and password. 
 #    Finally, we will tell the user whether the user is authenticated.
 # 4. What was the hardest part? Be as specific as possible.
-#    -type here-
+#    The hardest part was probably the authentification, 
+#    mostly due to me doing it differently at first and then changing.
 # 5. How long did it take for you to complete the assignment?
-#    -type here-
+#    approx. 2.5 hrs
 
 import json
+from os import close
 
-#Read the JSON file
-with open('Week02/Lab02.json') as f:
-    try:
-        data_json = json.load(f)
-    except:
-        print("Unable to open file Lab02.json.")
+#Read from the JSON file
+try:
+    with open('Week02/Lab02.json', "r") as file:
 
-#Convert JSON to string
-data = json.dumps(data_json, indent=4, sort_keys=False)
-print(data)
+        #Reads the file into text.
+        text = file.read()
+
+        #Converts text file into JSON.
+        my_json = json.loads(text)
+
+        #Pulls the list of username and list of passwords.
+        usernames = my_json['username']
+        passwords = my_json['password']
+
+    #print(usernames)
+    #print(passwords)
+
+    #User entrs input.
+    username = input("Username: ")
+    password = input("Password: ")
+
+    #Authenticate username and password.
+    if username in usernames:
+        if password in passwords:
+            print("You are authenticated!")
+        else:
+            print("You are not authorized to use the system.")
+            close
+
+#error handling incase the file isnt there.
+except FileNotFoundError:
+    print("Unable to open file Lab02.json.")
