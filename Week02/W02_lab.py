@@ -39,8 +39,10 @@ try:
     for i in range(len(usernames)):
         if username == str(usernames[i]) and password == str(passwords[i]):
             print("You are authenticated!")
+            break
         else:
             print("You are not authorized to use the system.")
+            break
 
 except FileNotFoundError:
     print("Unable to open file Lab02.json.")
