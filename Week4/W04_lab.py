@@ -88,11 +88,10 @@ def main():
             return end_turn
 
         #prompts user for available Houses.
-        #HEY ANDREW PUT THE ERROR HANDLING HERE AROUND THE ORIGINAL INPUT!!!
-        houses = int(input("How many house are there to purchase?\n: "))
+        buy_houses = int(input("How many house are there to purchase?\n: "))
 
         #check response for cash houses output.
-        if houses < total_need:
+        if buy_houses < total_need:
             print("There are not enough houses available for purchase this time.")
             end_turn = 1
             return end_turn
@@ -128,20 +127,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()     
-
-#TEST CASE: Does not own enough.
-
-#TEST CASE: Poor.
-
-#TEST CASE: No houses.
-
-#TEST CASE: Swap with Pacific.
-
-#TEST CASE: Swap with NC.
-
-#TEST CASE: Already built.
-
-#TEST CASE: All at once.
-
-#TEST CASE: House and hotel.
+    main()
