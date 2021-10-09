@@ -19,17 +19,13 @@ def main():
     while hotel != 1 or end_turn == 0:
         
         #prompts user to see if they own all the proptery.
-        property = input("Do you own all the green properties? (y/n)\n: ")
+        property = str(input("Do you own all the green properties? (y/n)\n: "))
 
         #Checks response for output.
         if property == "n":
             print("You cannot purcahse a hotel until you own all the properties of a given color group.")
             end_turn = 1
             return end_turn
-        #elif property != "y" or property != "n":
-            print("Please enter the proper response.")
-            property = str(input("Do you own all the green properties? (y/n)\n:"))
-
         
         #prompts user for what is on Pennsylvania.
         penn = int(input("What is on Pennsylvania Avenue? (0:nothing, 1:one house, 2:two houses, 3:three houses, 4:four houses, or 5:a hotel)\n: "))
@@ -39,8 +35,6 @@ def main():
             print("You cannot purcahse a hotel if the property already has one.")
             hotel = 1
             return hotel
-        #elif penn > 5 or penn < 0:
-            print("Please enter the proper response.")
 
         #prompts user for what is on North Carolina.
         carolina = int(input("What is on North Carolina Avenue? (0:nothing, 1:one house, 2:two houses, 3:three houses, 4:four houses, or 5:a hotel)\n: "))
@@ -50,9 +44,6 @@ def main():
             print("Swap North Carolina's hotel for Pennsylvania's 4 houses.")
             end_turn = 1
             return end_turn
-        #elif carolina > 5 or carolina < 0:
-            print("Please enter the proper response.")
-            carolina = int(input("What is on North Carolina Avenue? (0:nothing, 1:one house, 2:two houses, 3:three houses, 4:four houses, or 5:a hotel"))
             
         #prompts user for what is on Pacific.
         pacific = int(input("What is on Pacific Avenue? (0:nothing, 1:one house, 2:two houses, 3:three houses, 4:four houses, or 5:a hotel)\n:"))
@@ -62,10 +53,7 @@ def main():
             print("Swap Pacific's hotel for Pennsylvania's 4 houses.")
             end_turn = 1
             return end_turn
-        #elif pacific > 5 or pacific < 0:
-            print("Please enter the proper response.")
-            pacific = int(input("What is on Pacific Avenue? (0:nothing, 1:one house, 2:two houses, 3:three houses, 4:four houses, or 5:a hotel"))
-
+        
         #prompts user for available hotels.
         buy_hotels = int(input("How many hotels are there to purchase?\n:"))
 
@@ -74,10 +62,6 @@ def main():
             print("There are not enough hotels available for purchase at this time.")
             end_turn = 1
             return end_turn
-        #elif buy_hotels < 0 or buy_hotels > 12:
-            print("Please enter the proper response.")
-            buy_hotels = int(input("How many hotels are there to purchase?"))
-        
         
         #Math for calculated houses need for each property.
         PA_need = 4 - penn
@@ -95,7 +79,7 @@ def main():
         total_money_need = (200 * total_need) + 200
 
         #prompts user for total cash available.
-        cash = int(input("How much money do you have to spend?\n:"))
+        cash = int(input("How much money do you have to spend?\n: "))
 
         #checks response for cash output.
         if cash < total_money_need:
@@ -105,7 +89,7 @@ def main():
 
         #prompts user for available Houses.
         #HEY ANDREW PUT THE ERROR HANDLING HERE AROUND THE ORIGINAL INPUT!!!
-        houses = int(input("How many house are there to purchase?\n:"))
+        houses = int(input("How many house are there to purchase?\n: "))
 
         #check response for cash houses output.
         if houses < total_need:
@@ -114,7 +98,7 @@ def main():
             return end_turn
 
         #Display the amount of houses need to build a hotel.
-        print("The total amount of house need is",total_need,".")
+        print("The total amount of houses needed is",total_need,".")
 
         #Logic for purchasing houses and a hotel.
         if NC_need > 0:
@@ -143,6 +127,21 @@ def main():
                 return hotel       
 
 
-
 if __name__ == "__main__":
     main()     
+
+#TEST CASE: Does not own enough.
+
+#TEST CASE: Poor.
+
+#TEST CASE: No houses.
+
+#TEST CASE: Swap with Pacific.
+
+#TEST CASE: Swap with NC.
+
+#TEST CASE: Already built.
+
+#TEST CASE: All at once.
+
+#TEST CASE: House and hotel.
