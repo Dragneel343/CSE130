@@ -46,7 +46,7 @@ def main():
             return end_turn
             
         #prompts user for what is on Pacific.
-        pacific = int(input("What is on Pacific Avenue? (0:nothing, 1:one house, 2:two houses, 3:three houses, 4:four houses, or 5:a hotel)\n:"))
+        pacific = int(input("What is on Pacific Avenue? (0:nothing, 1:one house, 2:two houses, 3:three houses, 4:four houses, or 5:a hotel)\n: "))
 
         #checks response for PC output.
         if pacific == 5:
@@ -55,7 +55,7 @@ def main():
             return end_turn
         
         #prompts user for available hotels.
-        buy_hotels = int(input("How many hotels are there to purchase?\n:"))
+        buy_hotels = int(input("How many hotels are there to purchase?\n: "))
 
         #checks response for No Hotels output.
         if buy_hotels == 0:
