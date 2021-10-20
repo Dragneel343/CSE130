@@ -8,7 +8,8 @@
 # 4. What was the hardest part? Be as specific as possible.
 #    
 # 5. How long did it take for you to complete the assignment?
-#    
+#
+   
 
 def main():
     #create hotel and end_turn variable.
