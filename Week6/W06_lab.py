@@ -16,13 +16,14 @@ import json
 def main():
     #prompt for filename.
     filename = str(input("What is the name of the file? "))
-    if FileNotFoundError:
-        print(FileNotFoundError)
+    if filename == None:
+        print("File not found. Please try again.")
+        quit()
     
     #prompt for name to search.
     name = str(input("What name are we looking for? "))
 
-    data = json.loads(filename.text)
+    data = json.loads(filename)
     file = json.dumps(data)
 
     i_first = 0
